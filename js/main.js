@@ -33,3 +33,12 @@ window.addEventListener(
     }
   }, 300)
 );
+
+const fadeEls = document.querySelectorAll(".visual .fade-in");
+// gsap.to(요소, 지속시간, 옵션)
+fadeEls.forEach((fadeEl, index) => {
+  gsap.to(fadeEl, 1, {
+    delay: (index + 1) * 0.7,
+    opacity: 1,
+  });
+});
