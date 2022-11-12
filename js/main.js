@@ -42,3 +42,45 @@ fadeEls.forEach((fadeEl, index) => {
     opacity: 1,
   });
 });
+
+// swiper
+// new Swiper(선택자, 옵션)
+new Swiper(".notice-line .swiper", {
+  direction: "vertical",
+  autoplay: true,
+  loop: true,
+});
+
+new Swiper(".promotion .swiper", {
+  slidesPerView: 3,
+  spaceBetween: 10,
+  centeredSlides: true,
+  autoplay: {
+    delay: 5000,
+  },
+  loop: true,
+  pagination: {
+    el: ".promotion .swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    prevEl: ".promotion .swiper-button-prev",
+    nextEl: ".promotion .swiper-button-next",
+  },
+});
+
+const promotionEl = document.querySelector(".promotion");
+const promotionToggleBtn = document.querySelector(".toggle-promotion");
+const promotionToggleIcon = promotionToggleBtn.querySelector(".material-icons");
+
+let isHidePromotion = false;
+promotionToggleBtn.addEventListener("click", () => {
+  isHidePromotion = !isHidePromotion;
+  if (isHidePromotion) {
+    promotionEl.classList.add("hide");
+    promotionToggleIcon.textContent = "get_app";
+  } else {
+    promotionEl.classList.remove("hide");
+    promotionToggleIcon.textContent = "upload";
+  }
+});
