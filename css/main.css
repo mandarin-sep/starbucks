@@ -951,3 +951,7 @@ footer .logo {
   right: 30px;
   z-index: 9999;
 }
+
+#to-top.hide {
+  opacity: 0;
+}
